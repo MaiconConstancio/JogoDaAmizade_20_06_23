@@ -57,6 +57,7 @@ namespace JogoDaAmizade
             //titulo que fica em cima da janela
             Console.Title = "                                      JOGO DA AMIZADE - feito por MAICON CONSTANCIO ";
 
+
             Console.ForegroundColor = ConsoleColor.Cyan; //Troca de cor para Ciano
             string titulo = "\nBEM VINDO AO JOGO DA AMIZADE\n"; // ------------------------------------------------------ STRING
             EfeitoLetras(titulo);
@@ -113,10 +114,10 @@ namespace JogoDaAmizade
                         Console.Write("Gostaria de mais números? (Y/N)");
                     }
                         
-                    string message = Console.ReadLine();
+                    string mensagem = Console.ReadLine();
                     Console.ForegroundColor = ConsoleColor.Green;
 
-                    if (message.ToLower() == "y" && !ganho)
+                    if (mensagem.ToLower() == "y" && !ganho)
                     {
 
                         int CartasJogador01 = random.Next(1, 11);
@@ -128,7 +129,7 @@ namespace JogoDaAmizade
                         if (ganho) return;
 
                     }
-                    else if (rodadas > 1 && message.ToLower() == "n" && !ganho)
+                    else if (rodadas > 1 && mensagem.ToLower() == "n" && !ganho)
                     {
                         while (placarComputador <= placarJogador01 && placarJogador01 > 0)
                         {
@@ -174,10 +175,10 @@ namespace JogoDaAmizade
             {
                 ReseteDoJogo();
             }
-            else
-            {
-                SairDoJogo();
-            }
+                else if (resposta.ToLower() == "n")
+                {
+                    SairDoJogo();
+                }
         }
 
         //--------------------------------- SAIR DO JOGO E TODAS MENSAGENS DENTRO DO TYPE --------------------------------
@@ -195,7 +196,7 @@ namespace JogoDaAmizade
             EfeitoLetras(janelaFechaEm13s); //Essa janela será encerrada automaticamente em 13 segundos.
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\n\n"); //Muitas linhas para dar mais drama no Adeus kkkkk
-            EfeitoLetras(mensagemDeCarregamento); //..................
+            EfeitoLetras("........" + mensagemDeCarregamento); //..................
             EfeitoLetras(adeusAmigo); //Adeus amigo
             EfeitoLetras(mensagemDeReticencias); //... :c
             Console.ForegroundColor= ConsoleColor.DarkYellow;
@@ -239,7 +240,7 @@ namespace JogoDaAmizade
                 //Quando o jogador 1 passa de 21, da essa mensagem (Amigo IA, ganha 1 ponto)
                 Console.Beep(500, 500);
                 Console.ForegroundColor = ConsoleColor.Red; //Troca de cor
-                Console.WriteLine($"Sério {jogador01}?? KKKKKKKKK, achei que você seria um desafio para mim, " +
+                Console.WriteLine($"Sério {jogador01}????? KKKKKKKKK, achei que você seria um desafio para mim, " +
                     $"\nMas não sabe nem quando parar HAHAHA!");
                 Console.ForegroundColor= ConsoleColor.Yellow; //Troca de cor
                 Console.WriteLine($"{computador} É o vencedor!");
@@ -255,7 +256,7 @@ namespace JogoDaAmizade
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write($"{computador} comentou: ");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"Aaaa, eu passei de 21 :c, ta bem, admito,\n{jogador01} você ganhou... :/");
+                Console.WriteLine($"Aaaa, eu passei de 21 :c, ta bem... admito.\n{jogador01}, você ganhou... :/");
                 jogador01Vitorias++; // somar para jogador 1
 
                 ContinuarJogando();
