@@ -1,0 +1,8 @@
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\obj\Debug\JogoDaAmizade.csproj.AssemblyReference.cache
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\obj\Debug\JogoDaAmizade.csproj.SuggestedBindingRedirects.cache
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\obj\Debug\JogoDaAmizade.csproj.CoreCompileInputs.cache
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\bin\Debug\JogoDaAmizade.exe.config
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\bin\Debug\JogoDaAmizade.exe
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\bin\Debug\JogoDaAmizade.pdb
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\obj\Debug\JogoDaAmizade.exe
+C:\Users\MK\source\repos\JogoDaAmizade\JogoDaAmizade\obj\Debug\JogoDaAmizade.pdb
