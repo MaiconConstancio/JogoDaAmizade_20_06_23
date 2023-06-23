@@ -9,7 +9,7 @@ namespace JogoDaAmizade
 {
     internal class Program
     {
-        
+
         public static string mensagemDeCarregamento = "...................  ";
         public static string mensagemDeReticencias = "... :c\n\n";
         public static string oUltimoSuspiro = "Espero um dia te ver novamente....";
@@ -53,13 +53,13 @@ namespace JogoDaAmizade
             //Tamanho da janela
             Console.WindowHeight = 25;
             Console.WindowWidth = 85;
-            
+
             //titulo que fica em cima da janela
             Console.Title = "                                      JOGO DA AMIZADE - feito por MAICON CONSTANCIO ";
 
 
             Console.ForegroundColor = ConsoleColor.Cyan; //Troca de cor para Ciano
-            string titulo = "\nBEM VINDO AO JOGO DA AMIZADE\n"; // ------------------------------------------------------ STRING
+            string titulo = "\n                         BEM-VINDO AO JOGO DA AMIZADE\n"; // ------------------------------------------------------ STRING
             EfeitoLetras(titulo);
 
             IniciarJogo();
@@ -67,13 +67,19 @@ namespace JogoDaAmizade
         public static void IniciarJogo()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            string mensagemDeNome = "Qual o seu nome? "; // ------------------------------------------------------ STRING
+            string mensagemDeNome = "Como posso te chamar? "; // ------------------------------------------------------ STRING
             EfeitoLetras(mensagemDeNome);
 
             jogador01 = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\nBem vindo {jogador01} vamos lá!");
-            Console.WriteLine($"Objetivo: Fique com a contagem mais alta sem ultrapassar o número 21, okay!?\n");
+            Console.Write($"Objetivo: ");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write($"Fique com a contagem mais alta sem ultrapassar o ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($"número 21");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($", okay!?\n");
             Thread.Sleep(1000);
 
             //------------------------------- FIM DA INTRODUÇÃO ---------------------------------------------------
@@ -113,7 +119,7 @@ namespace JogoDaAmizade
                         Console.ForegroundColor = ConsoleColor.Green; // mudar de cor
                         Console.Write("Gostaria de mais números? (Y/N)");
                     }
-                        
+
                     string mensagem = Console.ReadLine();
                     Console.ForegroundColor = ConsoleColor.Green;
 
@@ -131,7 +137,7 @@ namespace JogoDaAmizade
                     }
                     else if (rodadas > 1 && mensagem.ToLower() == "n" && !ganho)
                     {
-                        while (placarComputador <= placarJogador01 && placarJogador01 > 0)
+                        while (placarComputador <= placarJogador01 && placarJogador01 > 0) //Vez do IA
                         {
                             int CartasAmigoIA = random.Next(1, 11);
                             placarComputador += CartasAmigoIA;
@@ -167,7 +173,7 @@ namespace JogoDaAmizade
 
         static void ContinuarJogando()
         {
-            Console.ForegroundColor= ConsoleColor.White; //Troca de cor
+            Console.ForegroundColor = ConsoleColor.White; //Troca de cor
             Console.Write("Continuar jogando? (Y/N)");
             string resposta = Console.ReadLine();
 
@@ -175,10 +181,10 @@ namespace JogoDaAmizade
             {
                 ReseteDoJogo();
             }
-                else if (resposta.ToLower() == "n")
-                {
-                    SairDoJogo();
-                }
+            else if (resposta.ToLower() == "n")
+            {
+                SairDoJogo();
+            }
         }
 
         //--------------------------------- SAIR DO JOGO E TODAS MENSAGENS DENTRO DO TYPE --------------------------------
@@ -199,7 +205,7 @@ namespace JogoDaAmizade
             EfeitoLetras("........" + mensagemDeCarregamento); //..................
             EfeitoLetras(adeusAmigo); //Adeus amigo
             EfeitoLetras(mensagemDeReticencias); //... :c
-            Console.ForegroundColor= ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             EfeitoLetras(oUltimoSuspiro); //Espero um dia te ver novamente....
 
 
@@ -242,7 +248,7 @@ namespace JogoDaAmizade
                 Console.ForegroundColor = ConsoleColor.Red; //Troca de cor
                 Console.WriteLine($"Sério {jogador01}????? KKKKKKKKK, achei que você seria um desafio para mim, " +
                     $"\nMas não sabe nem quando parar HAHAHA!");
-                Console.ForegroundColor= ConsoleColor.Yellow; //Troca de cor
+                Console.ForegroundColor = ConsoleColor.Yellow; //Troca de cor
                 Console.WriteLine($"{computador} É o vencedor!");
                 computadorVitorias++; //somar para computador
                 ContinuarJogando();
