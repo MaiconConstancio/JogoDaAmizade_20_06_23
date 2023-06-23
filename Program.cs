@@ -50,13 +50,15 @@ namespace JogoDaAmizade
         }
         static void Main(string[] args)
         {
-            //Tamanho da janela
+            //--------------------------------------- Tamanho da janela e título ---------------------------------------
             Console.WindowHeight = 25;
             Console.WindowWidth = 85;
 
             //titulo que fica em cima da janela
             Console.Title = "                                      JOGO DA AMIZADE - feito por MAICON CONSTANCIO ";
 
+
+            //------------------------------------------- INTRODUÇÃO ---------------------------------------------------
 
             Console.ForegroundColor = ConsoleColor.Cyan; //Troca de cor para Ciano
             string titulo = "\n                         BEM-VINDO AO JOGO DA AMIZADE\n"; // ------------------------------------------------------ STRING
@@ -88,13 +90,13 @@ namespace JogoDaAmizade
 
             while (true)
             {
-                Random random = new Random();
+                Random NumeroSortido = new Random();
 
                 if (rodadas == 1)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    int CartasJogador01 = random.Next(1, 11);
-                    int CartasAmigoIA = random.Next(1, 11);
+                    int CartasJogador01 = NumeroSortido.Next(1, 11);
+                    int CartasAmigoIA = NumeroSortido.Next(1, 11);
 
                     placarJogador01 += CartasJogador01;
                     placarComputador += CartasAmigoIA;
@@ -126,7 +128,7 @@ namespace JogoDaAmizade
                     if (mensagem.ToLower() == "y" && !ganho)
                     {
 
-                        int CartasJogador01 = random.Next(1, 11);
+                        int CartasJogador01 = NumeroSortido.Next(1, 11);
                         placarJogador01 += CartasJogador01;
                         Console.ForegroundColor = ConsoleColor.Green;
                         EfeitoLetras(mensagemDeCarregamento);
@@ -139,7 +141,7 @@ namespace JogoDaAmizade
                     {
                         while (placarComputador <= placarJogador01 && placarJogador01 > 0) //Vez do IA
                         {
-                            int CartasAmigoIA = random.Next(1, 11);
+                            int CartasAmigoIA = NumeroSortido.Next(1, 11);
                             placarComputador += CartasAmigoIA;
                             Console.ForegroundColor = ConsoleColor.Blue;
                             EfeitoLetras($"O {computador} está pensando... ");
